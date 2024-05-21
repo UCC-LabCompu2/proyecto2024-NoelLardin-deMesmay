@@ -3,7 +3,6 @@
 ## Autor
 
 Quentin Noël-Lardin
-
 Tristan de Mesmay
 
 ## Descripción
