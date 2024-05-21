@@ -1,7 +1,9 @@
 # Proyecto 2024 - Cálculo del IMC
 
 ## Autor
-Quentin Noël-Lardin 
+
+Quentin Noël-Lardin
+
 Tristan de Mesmay
 
 ## Descripción
