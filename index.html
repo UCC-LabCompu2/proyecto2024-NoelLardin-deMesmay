@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálcule su IMC</title>
+
+    <meta content="Quentin Noel-Lardin y Tristan de Mesmay" name="author">
+    <meta content="Sitio para calcular el IMC" name="descripcion">
+    <meta content="calculo, peso, talla, IMC, analysis, detalles, bajo peso, sobrepeso, obesidad" name="palabra">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icoIMC.jpg">
+</head>
+<body>
+<h1 id="tituloPrincipal">¡Cálcule su IMC!</h1>
+<nav>
+    <ul>
+        <li><a href="análisis.html">Análisis</a></li>
+        <li><a href="formulario.html">Formulario</a></li>
+    </ul>
+</nav>
+
+<h2 id="tituloSegundo">Introduzca sus datos</h2>
+
+<div>
+    <form>
+        <div>
+            <label for="input_peso">Peso:</label>
+            <input type="text" class="form-control" id="input_peso" aria-describedby="peso" placeholder="Ingrese su peso en kg" maxlength="3">
+        </div>
+
+        <div>
+            <label for="input_talla">Talla:</label>
+            <input type="text" class="form-control" id="input_talla" aria-describedby="talla" placeholder="Ingrese su talla en cm" maxlength="3">
+        </div>
+
+        <br>
+
+        <div>
+            <button type="submit" class="btn">Calcular</button>
+        </div>
+
+        <br>
+
+        <div>
+            <canvas id="myCanvas" width="200" height="50"></canvas>
+        </div>
+    </form>
+</div>
+
+<div>
+    <img src="images/imageIMC.jpeg" alt="">
+</div>
+</body>
+</html>

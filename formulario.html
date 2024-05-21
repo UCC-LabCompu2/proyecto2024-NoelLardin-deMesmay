@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálcule su IMC</title>
+
+    <meta content="Quentin Noel-Lardin y Tristan de Mesmay" name="author">
+    <meta content="Sitio para calcular el IMC" name="descripcion">
+    <meta content="calculo, peso, talla, IMC, analysis, detalles, bajo peso, sobrepeso, obesidad" name="palabra">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icoIMC.jpg">
+</head>
+<body>
+
+<h1 id="tituloPrincipal">¡Cálcule su IMC!</h1>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Calcula</a></li>
+        <li><a href="análisis.html">Análisis</a></li>
+    </ul>
+</nav>
+
+<h2 id="tituloSegundo">Rellene este formulario y le enviaremos los resultados por correo electrónico</h2>
+
+<form>
+    <div class="form-group">
+        <label for="input_nombre">Nombre:</label>
+        <input type="text" class="form-control" id="input_nombre" aria-describedby="nombre" placeholder="Ingrese su Nombre">
+    </div>
+
+    <div class="form-group">
+        <label for="input_apellido">Apellido:</label>
+        <input type="text" class="form-control" id="input_apellido" aria-describedby="apellido" placeholder="Ingrese su Apellido">
+    </div>
+
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="radioButton_sexo" id="sexoM" value="masculino">
+        <label class="form-check-label" for="sexoM">Masculino</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="radioButton_sexo" id="sexoF" value="femenino">
+        <label class="form-check-label" for="sexoF">Femenino</label>
+    </div>
+
+    <div class="form-group">
+        <label for="input_edad">Edad:</label>
+        <input type="text" class="form-control" id="input_edad" aria-describedby="edad" placeholder="Ingrese su Edad" maxlength="2">
+    </div>
+
+    <div class="form-group">
+        <label for="input_email">Email:</label>
+        <input type="email" class="form-control" id="input_email" aria-describedby="email" placeholder="Ingrese su email" size="30">
+    </div>
+
+    <div class="form-group">
+        <label for="input_deportivo">Número de sesiones deportivas por semana:</label>
+        <select class="form-control" id="input_deportivo">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+        </select>
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn">Enviar</button>
+</form>
+
+</body>
+</html>

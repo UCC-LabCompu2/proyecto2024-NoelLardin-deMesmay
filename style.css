@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+#tituloPrincipal {
+    font-family: 'Berlin Sans FB', sans-serif;
+    color: #c50f33;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #bfc8ed;
+    color: #333;
+    margin: 2%;
+    padding: 2%;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #c50f33;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+canvas {
+    border: 1px solid #000;
+    background-color: #dde3e8;
+}
+
+button:focus {
+    outline: none;
+    background-color: #2980b9;
+}
+
+.tituloNoticia {
+    color: #872c3e;
+}
