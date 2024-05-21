@@ -10,4 +10,4 @@ Este proyecto es una aplicación web simple que permite a los usuarios calcular 
 - **HTML**: Utilizado para estructurar la página web.
 - **CSS**: Utilizado para estilizar la página web.
 
-[Haga clic aquí para abrir el sitio](http://localhost:63342/Proyecto2024-NoelLardin-deMesmay/index.html?_ijt=n0uod2l2dj70ip5q2d6sva2sbh&_ij_reload=RELOAD_ON_SAVE)
+[Haga clic aquí para abrir el sitio]()
