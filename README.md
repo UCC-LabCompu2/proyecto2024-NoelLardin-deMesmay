@@ -9,5 +9,3 @@ Este proyecto es una aplicación web simple que permite a los usuarios calcular 
 ## Technologia Utilizadas
 - **HTML**: Utilizado para estructurar la página web.
 - **CSS**: Utilizado para estilizar la página web.
-
-[Haga clic aquí para abrir el sitio]()
