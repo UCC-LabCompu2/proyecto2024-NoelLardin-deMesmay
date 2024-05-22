@@ -13,7 +13,14 @@
 | **Tristan de Mesmay**     | *2415668* |
 
 ## Descripción
-Este proyecto es una aplicación web simple que permite a los usuarios calcular su Índice de Masa Corporal (IMC). Los usuarios pueden ingresar su peso y altura para obtener su IMC. Además, la aplicación proporciona un análisis de los resultados y explica qué significa cada rango de IMC. A continuación, los usuarios pueden enviarse a sí mismos los resultados rellenando un formulario.
+Este proyecto es una aplicación web simple que permite a los usuarios calcular su Índice de Masa Corporal (IMC). Los usuarios deben seguir los siguientes pasos:
+
+### Detalles de uso
+1. Ingresar su peso y altura.
+2. Obtener su IMC calculado automáticamente por la aplicación.
+3. Revisar el análisis de los resultados proporcionado por la aplicación, que explica qué significa cada rango de IMC.
+4. Rellenar un formulario para enviarse a sí mismos los resultados.
+
 
 ## Technologia Utilizadas
 - **HTML**: Utilizado para estructurar la página web.
