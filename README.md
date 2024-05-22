@@ -15,7 +15,7 @@
 ## Descripción
 Este proyecto es una aplicación web simple que permite a los usuarios calcular su Índice de Masa Corporal (IMC). Los usuarios deben seguir los siguientes pasos:
 
-### Detalles de uso
+### Detalles de la utilización
 1. Ingresar su peso y altura.
 2. Obtener su IMC calculado automáticamente por la aplicación.
 3. Revisar el análisis de los resultados proporcionado por la aplicación, que explica qué significa cada rango de IMC.
