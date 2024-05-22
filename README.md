@@ -9,8 +9,8 @@
 ## Autor
 | Nombre                | Clave     |
 |-----------------------|-----------|
-| **Quentin Noël-Lardin**   | *2417110* |
-| **Tristan de Mesmay**     | *2415668* |
+| Quentin Noël-Lardin  | *2417110* |
+| Tristan de Mesmay    | *2415668* |
 
 ## Descripción
 Este proyecto es una aplicación web simple que permite a los usuarios calcular su Índice de Masa Corporal (IMC). Los usuarios deben seguir los siguientes pasos:
