@@ -19,6 +19,11 @@
     display: none;
 }
 
+#mensaje {
+    display: block;
+    font-weight: bold;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #bfc8ed;
@@ -50,9 +55,4 @@ button:focus {
 
 .tituloNoticia {
     color: #872c3e;
-}
-
-#mensaje {
-    display: block;
-    font-weight: bold;
 }
