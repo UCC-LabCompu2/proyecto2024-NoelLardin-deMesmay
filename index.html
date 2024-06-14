@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Cálcule su IMC</title>
@@ -11,8 +12,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Imagines/icoIMC.jpg">
 </head>
+
 <body>
 <h1 id="tituloPrincipal">¡Cálcule su IMC!</h1>
+
 <nav>
     <ul>
         <li><a href="análisis.html">Análisis</a></li>
@@ -23,15 +26,19 @@
 <h2 id="tituloSegundo">Introduzca sus datos</h2>
 
 <div>
-    <form>
+    <form id="imcForm">
         <div>
             <label for="input_peso">Peso:</label>
             <input type="text" class="form-control" id="input_peso" aria-describedby="peso" placeholder="Ingrese su peso en kg" maxlength="3">
+            <span id="peso_error">Por favor, introduzca su peso en cifras.</span>
         </div>
+
+        <p></p>
 
         <div>
             <label for="input_talla">Talla:</label>
             <input type="text" class="form-control" id="input_talla" aria-describedby="talla" placeholder="Ingrese su talla en cm" maxlength="3">
+            <span id="talla_error">Por favor, introduzca su talla en cifras.</span>
         </div>
 
         <br>
@@ -49,7 +56,10 @@
 </div>
 
 <div>
-    <img src="Imagines/imageIMC.jpeg" alt="">
+    <img src="Imagines/imageIMC.jpeg" alt="ilustración">
 </div>
+
+<script src="script_index.js"></script>
+
 </body>
 </html>
