@@ -5,6 +5,20 @@
     color: #c50f33;
 }
 
+#peso_error {
+    color: #ec0231;
+    font-size: 15px;
+    font-weight: bold;
+    display: none;
+}
+
+#talla_error {
+    color: #ec0231;
+    font-size: 15px;
+    font-weight: bold;
+    display: none;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #bfc8ed;
@@ -27,7 +41,7 @@ img {
 canvas {
     border: 1px solid #000;
     background-color: #dde3e8;
-}
+    }
 
 button:focus {
     outline: none;
@@ -36,4 +50,9 @@ button:focus {
 
 .tituloNoticia {
     color: #872c3e;
+}
+
+#mensaje {
+    display: block;
+    font-weight: bold;
 }
