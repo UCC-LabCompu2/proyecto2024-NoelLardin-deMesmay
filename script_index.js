@@ -33,8 +33,7 @@ document.getElementById('imcForm').addEventListener('submit', function(event) {
 
 function validateNumber(input, min, max) {
     if (!/^\d+(\.\d+)?$/.test(input)) {
-        return false; // Vérifie si c'est un nombre valide
+        return false; 
     }
     let num = parseFloat(input);
-    return num >= min && num <= max; // Vérifie si le nombre est dans la plage spécifiée
-}
+    return num >= min && num <= max; 
