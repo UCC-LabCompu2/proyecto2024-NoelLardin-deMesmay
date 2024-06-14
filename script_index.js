@@ -1,8 +1,8 @@
 document.getElementById('imcForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    let peso = document.getElementById('input_peso').value.trim();
-    let talla = document.getElementById('input_talla').value.trim();
+    var peso = document.getElementById('input_peso').value.trim();
+    var talla = document.getElementById('input_talla').value.trim();
 
     document.getElementById('peso_error').style.display = 'none';
     document.getElementById('talla_error').style.display = 'none';
@@ -12,18 +12,18 @@ document.getElementById('imcForm').addEventListener('submit', function(event) {
         return;
     }
 
-    if (!validateNumber(talla, 30, 250)) {
+    if (!validateNumber(talla, 20, 300)) {
         document.getElementById('talla_error').style.display = 'inline';
         return;
     }
 
-    let pesoNum = parseFloat(peso);
-    let tallaNum = parseFloat(talla) / 100; // Convertir à mètres
-    let imc = pesoNum / (tallaNum * tallaNum);
+    var pesoNum = parseFloat(peso);
+    var tallaNum = parseFloat(talla) / 100;
+    var imc = pesoNum / (tallaNum * tallaNum);
     imc = Math.round(imc);
 
-    let canvas = document.getElementById('myCanvas');
-    let ctx = canvas.getContext('2d');
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = '20px Arial';
@@ -33,7 +33,8 @@ document.getElementById('imcForm').addEventListener('submit', function(event) {
 
 function validateNumber(input, min, max) {
     if (!/^\d+(\.\d+)?$/.test(input)) {
-        return false; 
+        return false;
     }
     let num = parseFloat(input);
-    return num >= min && num <= max; 
+    return num >= min && num <= max;
+}
