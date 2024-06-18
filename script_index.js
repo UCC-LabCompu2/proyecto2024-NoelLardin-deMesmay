@@ -9,14 +9,14 @@ document.getElementById('imcForm').addEventListener('submit', function(event) {
 
      if (!validateNumber(peso, 5, 650)) {
         document.getElementById('peso_error').style.display = 'inline';
-        alert('Peso inválido. Por favor, ingrese un valor entre 5 y 650 kg.');
+        alert('Peso inválido. Por favor, ingrese un valor entre 5 y 650 kg (sólo cifras positivas).');
         document.getElementById('input_peso').value = '';
         return;
     }
 
     if (!validateNumber(talla, 20, 300)) {
         document.getElementById('talla_error').style.display = 'inline';
-        alert('Talla inválida. Por favor, ingrese un valor entre 20 y 300 cm.');
+        alert('Talla inválida. Por favor, ingrese un valor entre 20 y 300 cm (sólo cifras positivas).');
         document.getElementById('input_talla').value = '';
         return;
     }
