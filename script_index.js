@@ -7,13 +7,17 @@ document.getElementById('imcForm').addEventListener('submit', function(event) {
     document.getElementById('peso_error').style.display = 'none';
     document.getElementById('talla_error').style.display = 'none';
 
-    if (!validateNumber(peso, 5, 650)) {
+     if (!validateNumber(peso, 5, 650)) {
         document.getElementById('peso_error').style.display = 'inline';
+        alert('Peso inválido. Por favor, ingrese un valor entre 5 y 650 kg.');
+        document.getElementById('input_peso').value = '';
         return;
     }
 
     if (!validateNumber(talla, 20, 300)) {
         document.getElementById('talla_error').style.display = 'inline';
+        alert('Talla inválida. Por favor, ingrese un valor entre 20 y 300 cm.');
+        document.getElementById('input_talla').value = '';
         return;
     }
 
