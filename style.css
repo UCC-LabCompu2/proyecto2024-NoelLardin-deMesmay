@@ -46,7 +46,7 @@ img {
 canvas {
     border: 1px solid #000;
     background-color: #dde3e8;
-    }
+}
 
 button:focus {
     outline: none;
