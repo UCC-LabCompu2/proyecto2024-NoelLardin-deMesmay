@@ -1,7 +1,7 @@
 /**
- * Fonction appelée lors de la soumission du formulaire IMC
- * Valide les entrées utilisateur, calcule l'IMC et dessine sur le canvas
- * @return {boolean} - Retourne false pour empêcher la soumission du formulaire si les entrées sont invalides
+ * Función llamada al enviar el formulario IMC
+ * Valida las entradas del usuario, calcula el IMC y dibuja en el canvas
+ * @return {boolean} - Devuelve false para evitar la subida del formulario si las entradas son inválidas
  */
 function validarIMC() {
     const peso = document.getElementById('input_peso').value.trim();
@@ -10,18 +10,20 @@ function validarIMC() {
     document.getElementById('peso_error').style.display = 'none';
     document.getElementById('talla_error').style.display = 'none';
 
+    // Validación del peso
     if (!validateNumber(peso, 5, 650)) {
         document.getElementById('peso_error').style.display = 'inline';
         alert('Peso inválido. Por favor, ingrese un valor entre 5 y 650 kg (sólo cifras positivas).');
         document.getElementById('input_peso').value = '';
-        return false; // Empêche la soumission du formulaire
+        return false; // Evita la subida del formulario
     }
 
+    // Validación de la talla
     if (!validateNumber(talla, 20, 300)) {
         document.getElementById('talla_error').style.display = 'inline';
         alert('Talla inválida. Por favor, ingrese un valor entre 20 y 300 cm (sólo cifras positivas).');
         document.getElementById('input_talla').value = '';
-        return false; // Empêche la soumission du formulaire
+        return false; // Evita la subida del formulario
     }
 
     const pesoNum = parseFloat(peso);
@@ -31,15 +33,15 @@ function validarIMC() {
     
     dibujarIMC(imc, categoria);
 
-    return false; // Empêche la soumission du formulaire
+    return false; // Evita la subida del formulario
 }
 
 /**
- * Valide si un numéro est dans une plage spécifique
- * @param {string} input - Valeur entrée par l'utilisateur
- * @param {number} min - Valeur minimale permise
- * @param {number} max - Valeur maximale permise
- * @return {boolean} - True si la valeur est valide, False sinon
+ * Valida si un número está dentro de un rango específico
+ * @param {string} input - Valor ingresado por el usuario
+ * @param {number} min - Valor mínimo permitido
+ * @param {number} max - Valor máximo permitido
+ * @return {boolean} - True si el valor es válido, False si no lo es
  */
 function validateNumber(input, min, max) {
     if (!/^\d+(\.\d+)?$/.test(input)) {
@@ -50,10 +52,10 @@ function validateNumber(input, min, max) {
 }
 
 /**
- * Calcule l'Indice de Masse Corporelle (IMC)
- * @param {number} peso - Poids de l'utilisateur en kilogrammes
- * @param {number} talla - Taille de l'utilisateur en mètres
- * @return {number} - Valeur de l'IMC
+ * Calcula el Índice de Masa Corporal (IMC)
+ * @param {number} peso - Peso del usuario en kilogramos
+ * @param {number} talla - Talla del usuario en metros
+ * @return {number} - Valor del IMC calculado
  */
 function calcularIMC(peso, talla) {
     const imc = peso / (talla * talla);
@@ -61,9 +63,9 @@ function calcularIMC(peso, talla) {
 }
 
 /**
- * Obtient la catégorie de l'IMC
- * @param {number} imc - Valeur de l'IMC calculée
- * @return {object} - Catégorie de l'IMC et couleur associée
+ * Obtiene la categoría del IMC
+ * @param {number} imc - Valor del IMC calculado
+ * @return {object} - Objeto con la categoría del IMC y el color asociado
  */
 function obtenerCategoriaIMC(imc) {
     if (imc < 18.5) {
@@ -82,9 +84,9 @@ function obtenerCategoriaIMC(imc) {
 }
 
 /**
- * Dessine la valeur de l'IMC et sa catégorie sur le canvas
- * @param {number} imc - Valeur de l'IMC calculée
- * @param {object} categoria - Catégorie de l'IMC et couleur associée
+ * Dibuja el valor del IMC y su categoría en el canvas
+ * @param {number} imc - Valor del IMC a dibujar
+ * @param {object} categoria - Objeto con la categoría del IMC y el color asociado
  */
 function dibujarIMC(imc, categoria) {
     const canvas = document.getElementById('myCanvas');
