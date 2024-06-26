@@ -7,7 +7,7 @@ document.getElementById('imcForm').addEventListener('submit', function(event) {
     document.getElementById('peso_error').style.display = 'none';
     document.getElementById('talla_error').style.display = 'none';
 
-     if (!validateNumber(peso, 5, 650)) {
+    if (!validateNumber(peso, 5, 650)) {
         document.getElementById('peso_error').style.display = 'inline';
         alert('Peso inválido. Por favor, ingrese un valor entre 5 y 650 kg (sólo cifras positivas).');
         document.getElementById('input_peso').value = '';
@@ -28,7 +28,6 @@ document.getElementById('imcForm').addEventListener('submit', function(event) {
     dibujarIMC(imc);
 });
 
-
 /**
  * Valida si un número está dentro de un rango específico
  * @method validateNumber
@@ -44,7 +43,6 @@ const validateNumber = (input, min, max) => {
     const num = parseFloat(input);
     return num >= min && num <= max;
 };
-
 
 /**
  * Calcula el Índice de Masa Corporal (IMC)
@@ -72,4 +70,3 @@ const dibujarIMC = (imc) => {
     ctx.fillStyle = 'black';
     ctx.fillText('Su IMC es: ' + imc, 10, 30);
 };
-
