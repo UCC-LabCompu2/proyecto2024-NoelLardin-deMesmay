@@ -13,83 +13,82 @@
     <link rel="icon" href="Imagines/icoIMC.jpg">
 </head>
 
-
 <body>
-<h1 id="tituloPrincipal">¡Cálcule su IMC!</h1>
+    <h1 id="tituloPrincipal">¡Cálcule su IMC!</h1>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Calcula</a></li>
-        <li><a href="análisis.html">Análisis</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">Calcula</a></li>
+            <li><a href="análisis.html">Análisis</a></li>
+        </ul>
+    </nav>
 
-<h2 id="tituloSegundo">Rellene este formulario y le enviaremos los resultados por correo electrónico</h2>
+    <h2 id="tituloSegundo">Rellene este formulario y le enviaremos los resultados por correo electrónico</h2>
 
-<form id="dataForm">
-    <div class="form-group">
-        <label for="input_nombre">Nombre:</label>
-        <input type="text" class="form-control" id="input_nombre" aria-describedby="nombre" placeholder="Ingrese su Nombre">
-    </div>
+    <form id="dataForm">
+        <div class="form-group">
+            <label for="input_nombre">Nombre:</label>
+            <input type="text" class="form-control" id="input_nombre" aria-describedby="nombre" placeholder="Ingrese su Nombre">
+        </div>
 
-    <p></p>
+        <p></p>
 
-    <div class="form-group">
-        <label for="input_apellido">Apellido:</label>
-        <input type="text" class="form-control" id="input_apellido" aria-describedby="apellido" placeholder="Ingrese su Apellido">
-    </div>
+        <div class="form-group">
+            <label for="input_apellido">Apellido:</label>
+            <input type="text" class="form-control" id="input_apellido" aria-describedby="apellido" placeholder="Ingrese su Apellido">
+        </div>
 
-    <p></p>
+        <p></p>
 
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="radioButton_sexo" id="sexoM" value="masculino">
-        <label class="form-check-label" for="sexoM">Masculino</label>
-    </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radioButton_sexo" id="sexoM" value="masculino">
+            <label class="form-check-label" for="sexoM">Masculino</label>
+        </div>
 
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="radioButton_sexo" id="sexoF" value="femenino">
-        <label class="form-check-label" for="sexoF">Femenino</label>
-    </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radioButton_sexo" id="sexoF" value="femenino">
+            <label class="form-check-label" for="sexoF">Femenino</label>
+        </div>
 
-    <p></p>
+        <p></p>
 
-    <div class="form-group">
-        <label for="input_edad">Edad:</label>
-        <input type="text" class="form-control" id="input_edad" aria-describedby="edad" placeholder="Ingrese su Edad" maxlength="2">
-    </div>
+        <div class="form-group">
+            <label for="input_edad">Edad:</label>
+            <input type="text" class="form-control" id="input_edad" aria-describedby="edad" placeholder="Ingrese su Edad" maxlength="2">
+        </div>
 
-    <p></p>
+        <p></p>
 
-    <div class="form-group">
-        <label for="input_email">Email:</label>
-        <input type="email" class="form-control" id="input_email" aria-describedby="email" placeholder="Ingrese su email" size="30">
-    </div>
+        <div class="form-group">
+            <label for="input_email">Email:</label>
+            <input type="email" class="form-control" id="input_email" aria-describedby="email" placeholder="Ingrese su email" size="30">
+        </div>
 
-    <p></p>
+        <p></p>
 
-    <div class="form-group">
-        <label for="input_deportivo">Número de sesiones deportivas por semana:</label>
-        <select class="form-control" id="input_deportivo">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-        </select>
-    </div>
+        <div class="form-group">
+            <label for="input_deportivo">Número de sesiones deportivas por semana:</label>
+            <select class="form-control" id="input_deportivo">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+        </div>
 
-    <br>
+        <br>
 
-    <div id="mensaje"></div>
+        <div id="mensaje"></div>
 
-    <button type="submit" class="btn">Enviar</button>
+        <button type="submit" class="btn">Enviar</button>
 
-</form>
+    </form>
 
-<script src="script_form.js"></script>
+    <script src="script_form.js"></script>
 
 </body>
 </html>
