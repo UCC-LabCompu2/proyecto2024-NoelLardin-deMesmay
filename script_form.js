@@ -1,22 +1,25 @@
-document.getElementById('dataForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
+/**
+ * Función llamada al enviar el formulario de datos
+ * Valida los campos del formulario y muestra mensajes de error si es necesario
+ * @return {boolean} - Devuelve false para evitar la subida del formulario si los campos son inválidos
+ */
+function validarFormulario() {
     const nombre = document.getElementById('input_nombre').value.trim();
     const apellido = document.getElementById('input_apellido').value.trim();
     const edad = document.getElementById('input_edad').value.trim();
     const email = document.getElementById('input_email').value.trim();
     const sexoM = document.getElementById('sexoM').checked;
     const sexoF = document.getElementById('sexoF').checked;
-    
+
     let isValid = true;
 
-    // Reset error messages
+    // Resetear mensajes de error
     const errorMessages = document.querySelectorAll('.error-message');
     errorMessages.forEach(message => {
         message.textContent = '';
     });
 
-    // Validate nombre
+    // Validar nombre
     if (!nombre || /\d/.test(nombre)) {
         isValid = false;
         const nombreError = document.getElementById('nombre_error');
@@ -24,7 +27,7 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
         document.getElementById('input_nombre').value = '';
     }
 
-    // Validate apellido
+    // Validar apellido
     if (!apellido || /\d/.test(apellido)) {
         isValid = false;
         const apellidoError = document.getElementById('apellido_error');
@@ -32,7 +35,7 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
         document.getElementById('input_apellido').value = '';
     }
 
-    // Validate edad
+    // Validar edad
     if (!edad || !/^\d+$/.test(edad)) {
         isValid = false;
         const edadError = document.getElementById('edad_error');
@@ -40,7 +43,7 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
         document.getElementById('input_edad').value = '';
     }
 
-    // Validate email
+    // Validar email
     if (!email) {
         isValid = false;
         const emailError = document.getElementById('email_error');
@@ -48,7 +51,7 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
         document.getElementById('input_email').value = '';
     }
 
-    // Validate sexo
+    // Validar sexo
     if (!sexoM && !sexoF) {
         isValid = false;
         const sexoError = document.getElementById('sexo_error');
@@ -61,4 +64,6 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
         mensajeDiv.textContent = 'Formulario enviado con éxito';
         document.getElementById('dataForm').reset();
     }
-});
+
+    return false; // Evita la subida del formulario
+}
