@@ -14,52 +14,51 @@
 </head>
 
 <body>
-<h1 id="tituloPrincipal">¡Cálcule su IMC!</h1>
+    <h1 id="tituloPrincipal">¡Cálcule su IMC!</h1>
 
-<nav>
-    <ul>
-        <li><a href="análisis.html">Análisis</a></li>
-        <li><a href="formulario.html">Formulario</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="análisis.html">Análisis</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+        </ul>
+    </nav>
 
-<h2 id="tituloSegundo">Introduzca sus datos</h2>
+    <h2 id="tituloSegundo">Introduzca sus datos</h2>
 
-<div>
-    <form id="imcForm">
-        <div>
-            <label for="input_peso">Peso:</label>
-            <input type="text" class="form-control" id="input_peso" aria-describedby="peso" placeholder="Ingrese su peso en kg" maxlength="3">
-            <span id="peso_error" style="display:none; color:red;">Peso inválido</span>
-        </div>
+    <div>
+        <form id="imcForm">
+            <div>
+                <label for="input_peso">Peso:</label>
+                <input type="text" class="form-control" id="input_peso" aria-describedby="peso" placeholder="Ingrese su peso en kg" maxlength="3">
+                <span id="peso_error" style="display:none; color:red;">Peso inválido</span>
+            </div>
 
-        <p></p>
+            <p></p>
 
-        <div>
-            <label for="input_talla">Talla:</label>
-            <input type="text" class="form-control" id="input_talla" aria-describedby="talla" placeholder="Ingrese su talla en cm" maxlength="3">
-            <span id="talla_error" style="display:none; color:red;">Talla inválida</span>
-        </div>
+            <div>
+                <label for="input_talla">Talla:</label>
+                <input type="text" class="form-control" id="input_talla" aria-describedby="talla" placeholder="Ingrese su talla en cm" maxlength="3">
+                <span id="talla_error" style="display:none; color:red;">Talla inválida</span>
+            </div>
 
-        <br>
+            <br>
 
-        <div>
-            <button type="submit" class="btn">Calcular</button>
-        </div>
+            <div>
+                <button type="submit" class="btn">Calcular</button>
+            </div>
 
-        <br>
+            <br>
 
-        <div>
-            <canvas id="myCanvas" width="200" height="50"></canvas>
-        </div>
-    </form>
-</div>
+            <div>
+                <canvas id="myCanvas" width="300" height="100"></canvas>
+            </div>
+        </form>
+    </div>
 
-<div>
-    <img src="Imagines/imageIMC.jpeg" alt="ilustración">
-</div>
+    <div>
+        <img src="Imagines/imageIMC.jpeg" alt="ilustración">
+    </div>
 
-<script src="script_index.js"></script>
-
+    <script src="script_index.js"></script>
 </body>
 </html>
