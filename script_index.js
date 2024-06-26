@@ -1,6 +1,9 @@
-document.getElementById('imcForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
+/**
+ * Fonction appelée lors de la soumission du formulaire IMC
+ * Valide les entrées utilisateur, calcule l'IMC et dessine sur le canvas
+ * @return {boolean} - Retourne false pour empêcher la soumission du formulaire si les entrées sont invalides
+ */
+function validarIMC() {
     const peso = document.getElementById('input_peso').value.trim();
     const talla = document.getElementById('input_talla').value.trim();
 
@@ -11,59 +14,58 @@ document.getElementById('imcForm').addEventListener('submit', function(event) {
         document.getElementById('peso_error').style.display = 'inline';
         alert('Peso inválido. Por favor, ingrese un valor entre 5 y 650 kg (sólo cifras positivas).');
         document.getElementById('input_peso').value = '';
-        return;
+        return false; // Empêche la soumission du formulaire
     }
 
     if (!validateNumber(talla, 20, 300)) {
         document.getElementById('talla_error').style.display = 'inline';
         alert('Talla inválida. Por favor, ingrese un valor entre 20 y 300 cm (sólo cifras positivas).');
         document.getElementById('input_talla').value = '';
-        return;
+        return false; // Empêche la soumission du formulaire
     }
 
     const pesoNum = parseFloat(peso);
     const tallaNum = parseFloat(talla) / 100;
-    let imc = calcularIMC(pesoNum, tallaNum);
-    let categoria = obtenerCategoriaIMC(imc);
+    const imc = calcularIMC(pesoNum, tallaNum);
+    const categoria = obtenerCategoriaIMC(imc);
     
     dibujarIMC(imc, categoria);
-});
+
+    return false; // Empêche la soumission du formulaire
+}
 
 /**
- * Valida si un número está dentro de un rango específico
- * @method validateNumber
- * @param {string} input - Valor ingresado por el usuario
- * @param {number} min - Valor mínimo permitido
- * @param {number} max - Valor máximo permitido
- * @return {boolean} - True si el valor es válido, False en caso contrario
+ * Valide si un numéro est dans une plage spécifique
+ * @param {string} input - Valeur entrée par l'utilisateur
+ * @param {number} min - Valeur minimale permise
+ * @param {number} max - Valeur maximale permise
+ * @return {boolean} - True si la valeur est valide, False sinon
  */
-const validateNumber = (input, min, max) => {
+function validateNumber(input, min, max) {
     if (!/^\d+(\.\d+)?$/.test(input)) {
         return false;
     }
     const num = parseFloat(input);
     return num >= min && num <= max;
-};
+}
 
 /**
- * Calcula el Índice de Masa Corporal (IMC)
- * @method calcularIMC
- * @param {number} peso - Peso del usuario en kilogramos
- * @param {number} talla - Talla del usuario en metros
- * @return {number} - Valor del IMC
+ * Calcule l'Indice de Masse Corporelle (IMC)
+ * @param {number} peso - Poids de l'utilisateur en kilogrammes
+ * @param {number} talla - Taille de l'utilisateur en mètres
+ * @return {number} - Valeur de l'IMC
  */
-const calcularIMC = (peso, talla) => {
+function calcularIMC(peso, talla) {
     const imc = peso / (talla * talla);
     return Math.round(imc);
-};
+}
 
 /**
- * Obtiene la categoría del IMC
- * @method obtenerCategoriaIMC
- * @param {number} imc - Valor del IMC calculado
- * @return {object} - Categoría del IMC y color asociado
+ * Obtient la catégorie de l'IMC
+ * @param {number} imc - Valeur de l'IMC calculée
+ * @return {object} - Catégorie de l'IMC et couleur associée
  */
-const obtenerCategoriaIMC = (imc) => {
+function obtenerCategoriaIMC(imc) {
     if (imc < 18.5) {
         return { categoria: 'Bajo peso', color: 'blue' };
     } else if (imc >= 18.5 && imc < 25) {
@@ -77,15 +79,14 @@ const obtenerCategoriaIMC = (imc) => {
     } else {
         return { categoria: 'Obesidad Clase 3', color: 'purple' };
     }
-};
+}
 
 /**
- * Dibuja el valor del IMC y su categoría en el canvas
- * @method dibujarIMC
- * @param {number} imc - Valor del IMC calculado
- * @param {object} categoria - Categoría del IMC y color asociado
+ * Dessine la valeur de l'IMC et sa catégorie sur le canvas
+ * @param {number} imc - Valeur de l'IMC calculée
+ * @param {object} categoria - Catégorie de l'IMC et couleur associée
  */
-const dibujarIMC = (imc, categoria) => {
+function dibujarIMC(imc, categoria) {
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
 
@@ -94,4 +95,4 @@ const dibujarIMC = (imc, categoria) => {
     ctx.fillStyle = categoria.color;
     ctx.fillText('Su IMC es: ' + imc, 10, 30);
     ctx.fillText('Categoría: ' + categoria.categoria, 10, 60);
-};
+}
