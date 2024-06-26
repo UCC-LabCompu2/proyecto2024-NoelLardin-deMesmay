@@ -25,10 +25,11 @@
 
     <h2 id="tituloSegundo">Rellene este formulario y le enviaremos los resultados por correo electrónico</h2>
 
-    <form id="dataForm">
+    <form id="dataForm" onsubmit="return validarFormulario()">
         <div class="form-group">
             <label for="input_nombre">Nombre:</label>
-            <input type="text" class="form-control" id="input_nombre" aria-describedby="nombre" placeholder="Ingrese su Nombre">
+            <input type="text" class="form-control" id="input_nombre" aria-describedby="nombre"
+                placeholder="Ingrese su Nombre">
             <span id="nombre_error" class="error-message" style="color:red;"></span>
         </div>
 
@@ -36,7 +37,8 @@
 
         <div class="form-group">
             <label for="input_apellido">Apellido:</label>
-            <input type="text" class="form-control" id="input_apellido" aria-describedby="apellido" placeholder="Ingrese su Apellido">
+            <input type="text" class="form-control" id="input_apellido" aria-describedby="apellido"
+                placeholder="Ingrese su Apellido">
             <span id="apellido_error" class="error-message" style="color:red;"></span>
         </div>
 
@@ -96,4 +98,5 @@
     <script src="script_form.js"></script>
 
 </body>
+
 </html>
