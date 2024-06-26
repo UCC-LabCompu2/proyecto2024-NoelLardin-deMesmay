@@ -10,13 +10,17 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
     const mensajeDiv = document.getElementById('mensaje');
 
     let errorMensaje = '';
+    let invalidFields = [];
 
     if (!nombre || !apellido || !edad || !email) {
         errorMensaje = '¡Error! Por favor, complete todos los campos.';
+        invalidFields = [nombre, apellido, edad, email];
     } else if (/\d/.test(nombre) || /\d/.test(apellido)) {
         errorMensaje = '¡Error! El nombre y el apellido no deben contener números.';
+        invalidFields = [nombre, apellido];
     } else if (!/^\d+$/.test(edad)) {
         errorMensaje = '¡Error! La edad debe contener solo números.';
+        invalidFields = [edad];
     } else if (!sexoM && !sexoF) {
         errorMensaje = '¡Error! Por favor, seleccione su sexo.';
     }
@@ -24,6 +28,11 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
     if (errorMensaje) {
         mensajeDiv.style.color = 'red';
         mensajeDiv.textContent = errorMensaje;
+        
+        // Blanquear campos inválidos
+        invalidFields.forEach(field => {
+            document.getElementById(`input_${field}`).value = '';
+        });
     } else {
         mensajeDiv.style.color = 'green';
         mensajeDiv.textContent = 'Formulario enviado con éxito';
