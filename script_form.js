@@ -7,37 +7,56 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
     const email = document.getElementById('input_email').value.trim();
     const sexoM = document.getElementById('sexoM').checked;
     const sexoF = document.getElementById('sexoF').checked;
-    const mensajeDiv = document.getElementById('mensaje');
+    
+    let isValid = true;
 
-    let errorMensaje = '';
-    let invalidFields = [];
+    // Reset error messages
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(message => {
+        message.textContent = '';
+    });
 
-    if (!nombre || !apellido || !edad || !email) {
-        errorMensaje = '¡Error! Por favor, complete todos los campos.';
-        if (!nombre) invalidFields.push('input_nombre');
-        if (!apellido) invalidFields.push('input_apellido');
-        if (!edad) invalidFields.push('input_edad');
-        if (!email) invalidFields.push('input_email');
-    } else if (/\d/.test(nombre) || /\d/.test(apellido)) {
-        errorMensaje = '¡Error! El nombre y el apellido no deben contener números.';
-        if (/\d/.test(nombre)) invalidFields.push('input_nombre');
-        if (/\d/.test(apellido)) invalidFields.push('input_apellido');
-    } else if (!/^\d+$/.test(edad)) {
-        errorMensaje = '¡Error! La edad debe contener solo números.';
-        invalidFields.push('input_edad');
-    } else if (!sexoM && !sexoF) {
-        errorMensaje = '¡Error! Por favor, seleccione su sexo.';
+    // Validate nombre
+    if (!nombre || /\d/.test(nombre)) {
+        isValid = false;
+        const nombreError = document.getElementById('nombre_error');
+        nombreError.textContent = !nombre ? '¡Error! El campo nombre es obligatorio.' : '¡Error! El nombre no debe contener números.';
+        document.getElementById('input_nombre').value = '';
     }
 
-    if (errorMensaje) {
-        mensajeDiv.style.color = 'red';
-        mensajeDiv.textContent = errorMensaje;
+    // Validate apellido
+    if (!apellido || /\d/.test(apellido)) {
+        isValid = false;
+        const apellidoError = document.getElementById('apellido_error');
+        apellidoError.textContent = !apellido ? '¡Error! El campo apellido es obligatorio.' : '¡Error! El apellido no debe contener números.';
+        document.getElementById('input_apellido').value = '';
+    }
 
-        // Effacer les champs invalides
-        invalidFields.forEach(fieldId => {
-            document.getElementById(fieldId).value = '';
-        });
-    } else {
+    // Validate edad
+    if (!edad || !/^\d+$/.test(edad)) {
+        isValid = false;
+        const edadError = document.getElementById('edad_error');
+        edadError.textContent = !edad ? '¡Error! El campo edad es obligatorio.' : '¡Error! La edad debe contener solo números.';
+        document.getElementById('input_edad').value = '';
+    }
+
+    // Validate email
+    if (!email) {
+        isValid = false;
+        const emailError = document.getElementById('email_error');
+        emailError.textContent = '¡Error! El campo email es obligatorio.';
+        document.getElementById('input_email').value = '';
+    }
+
+    // Validate sexo
+    if (!sexoM && !sexoF) {
+        isValid = false;
+        const sexoError = document.getElementById('sexo_error');
+        sexoError.textContent = '¡Error! Por favor, seleccione su sexo.';
+    }
+
+    if (isValid) {
+        const mensajeDiv = document.getElementById('mensaje');
         mensajeDiv.style.color = 'green';
         mensajeDiv.textContent = 'Formulario enviado con éxito';
         document.getElementById('dataForm').reset();
