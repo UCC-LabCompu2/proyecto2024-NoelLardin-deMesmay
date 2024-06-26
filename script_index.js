@@ -24,8 +24,9 @@ document.getElementById('imcForm').addEventListener('submit', function(event) {
     var pesoNum = parseFloat(peso);
     var tallaNum = parseFloat(talla) / 100;
     var imc = calcularIMC(pesoNum, tallaNum);
-
-    dibujarIMC(imc);
+    var categoria = obtenerCategoriaIMC(imc);
+    
+    dibujarIMC(imc, categoria);
 });
 
 /**
@@ -57,16 +58,40 @@ const calcularIMC = (peso, talla) => {
 };
 
 /**
- * Dibuja el valor del IMC en el canvas
+ * Obtiene la categoría del IMC
+ * @method obtenerCategoriaIMC
+ * @param {number} imc - Valor del IMC calculado
+ * @return {object} - Categoría del IMC y color asociado
+ */
+const obtenerCategoriaIMC = (imc) => {
+    if (imc < 18.5) {
+        return { categoria: 'Bajo peso', color: 'blue' };
+    } else if (imc >= 18.5 && imc < 25) {
+        return { categoria: 'Peso saludable', color: 'green' };
+    } else if (imc >= 25 && imc < 30) {
+        return { categoria: 'Sobrepeso', color: 'orange' };
+    } else if (imc >= 30 && imc < 35) {
+        return { categoria: 'Obesidad Clase 1', color: 'red' };
+    } else if (imc >= 35 && imc < 40) {
+        return { categoria: 'Obesidad Clase 2', color: 'darkred' };
+    } else {
+        return { categoria: 'Obesidad Clase 3', color: 'purple' };
+    }
+};
+
+/**
+ * Dibuja el valor del IMC y su categoría en el canvas
  * @method dibujarIMC
  * @param {number} imc - Valor del IMC calculado
+ * @param {object} categoria - Categoría del IMC y color asociado
  */
-const dibujarIMC = (imc) => {
+const dibujarIMC = (imc, categoria) => {
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = '20px Arial';
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = categoria.color;
     ctx.fillText('Su IMC es: ' + imc, 10, 30);
+    ctx.fillText('Categoría: ' + categoria.categoria, 10, 60);
 };
