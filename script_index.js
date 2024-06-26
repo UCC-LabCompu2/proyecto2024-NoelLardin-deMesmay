@@ -1,8 +1,8 @@
 document.getElementById('imcForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var peso = document.getElementById('input_peso').value.trim();
-    var talla = document.getElementById('input_talla').value.trim();
+    const peso = document.getElementById('input_peso').value.trim();
+    const talla = document.getElementById('input_talla').value.trim();
 
     document.getElementById('peso_error').style.display = 'none';
     document.getElementById('talla_error').style.display = 'none';
@@ -21,10 +21,10 @@ document.getElementById('imcForm').addEventListener('submit', function(event) {
         return;
     }
 
-    var pesoNum = parseFloat(peso);
-    var tallaNum = parseFloat(talla) / 100;
-    var imc = calcularIMC(pesoNum, tallaNum);
-    var categoria = obtenerCategoriaIMC(imc);
+    const pesoNum = parseFloat(peso);
+    const tallaNum = parseFloat(talla) / 100;
+    let imc = calcularIMC(pesoNum, tallaNum);
+    let categoria = obtenerCategoriaIMC(imc);
     
     dibujarIMC(imc, categoria);
 });
