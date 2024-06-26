@@ -26,10 +26,11 @@
     <h2 id="tituloSegundo">Introduzca sus datos</h2>
 
     <div>
-        <form id="imcForm">
+        <form id="imcForm" onsubmit="return validarIMC()">
             <div>
                 <label for="input_peso">Peso:</label>
-                <input type="text" class="form-control" id="input_peso" aria-describedby="peso" placeholder="Ingrese su peso en kg" maxlength="3">
+                <input type="text" class="form-control" id="input_peso" aria-describedby="peso"
+                    placeholder="Ingrese su peso en kg" maxlength="3">
                 <span id="peso_error" style="display:none; color:red;">Peso inválido</span>
             </div>
 
@@ -37,7 +38,8 @@
 
             <div>
                 <label for="input_talla">Talla:</label>
-                <input type="text" class="form-control" id="input_talla" aria-describedby="talla" placeholder="Ingrese su talla en cm" maxlength="3">
+                <input type="text" class="form-control" id="input_talla" aria-describedby="talla"
+                    placeholder="Ingrese su talla en cm" maxlength="3">
                 <span id="talla_error" style="display:none; color:red;">Talla inválida</span>
             </div>
 
@@ -61,4 +63,5 @@
 
     <script src="script_index.js"></script>
 </body>
+
 </html>
